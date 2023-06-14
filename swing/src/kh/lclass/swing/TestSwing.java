@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.xml.transform.Source;
 
 public class TestSwing extends JFrame {
 	public TestSwing() {
@@ -23,6 +22,8 @@ public class TestSwing extends JFrame {
 //		contentPane.add(new JButton("Cancel"),BorderLayout.WEST);
 //		contentPane.add(new JButton("Ignore"),BorderLayout.EAST);
 //		contentPane.add(new JButton("Ignore"),BorderLayout.CENTER);
+		
+		// component 생성
 		JTextField txtName = new JTextField();
 		JTextField txtNO = new JTextField();
 		JTextField txtMajor = new JTextField();
@@ -50,6 +51,8 @@ public class TestSwing extends JFrame {
 		
 //		contentPane.add(new JButton("저장"));
 //		contentPane.add(btnSave);
+		
+		//윈도우 창크기  true를해야 창이 보여짐 false를쓰면 창이 안보임.
 		setSize(300,300);
 		setVisible(true);
 		
@@ -67,6 +70,30 @@ public class TestSwing extends JFrame {
 	public static void main(String[] args) {
 		TestSwing frame = new TestSwing();
 	}
+	
+	class MyActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("이건 언제 호출되지??");
+			System.out.println(e);
+			Object source = e.getSource();
+			if (source instanceof JTextField) {
+
+				System.out.println("JTextField에서 enter가 눌렀네요");
+				if (((JTextField) source).getText().trim().length() == 0) {
+					((JTextField) source).setText("이름을 입력해주세요");
+				} else {
+					((JTextField) source).setText(((JTextField)source).getText().trim());
+				}
+			} else if (source instanceof JTextField) {
+
+				{
+					System.out.println("text 필드에서 enter key를 눌렀네요.");
+				}
+			}
+		}
+	}
+}
+	
 
 	class MyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -89,4 +116,3 @@ public class TestSwing extends JFrame {
 			}
 		}
 	}
-}
