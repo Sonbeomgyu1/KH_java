@@ -16,6 +16,9 @@ import kh.test.jdbckh.student.model.vo.StudentVo;
 /**
  * Servlet implementation class StudentListController
  */
+//톰캣을 통해 서버연결요청시 인터넷화면에 뭘 보여줄건지 알려줘야하는데
+//경로 설정해주는것
+//html 웹페이지를 구현을 해놨는데 연결하는곳은 controller
 @WebServlet({"/student/list", "/aaa"})
 public class StudentListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

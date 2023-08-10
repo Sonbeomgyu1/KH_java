@@ -1,0 +1,8 @@
+@import url("./projectname_layout.css")
+
+:root{
+	/*--blue은 변수명처럼 사용함. ""따옴표 사용하지 않음*/
+	--blue: #007bff;
+	--indigo: #6610f2;
+	--purple: #6f42c1;
+}

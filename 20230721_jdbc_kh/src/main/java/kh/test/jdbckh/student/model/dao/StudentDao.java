@@ -15,7 +15,10 @@ import static kh.test.jdbckh.common.jdbc.JdbcTemplate.*;
 
 public class StudentDao {
 // PPT 내용구현
-	
+	//dao는 sql이랑 연동을해서 걔네를 불러와야함.
+	//dao에서 int a 라고 설정해놨으면 sql에서 kh테이블 컬럼에 있는
+	//a랑 같다는걸 연결해줘야하는곳 , 기능구현하는곳
+	//sql 컬럼명을 작성해야함.
 	public int insertStudent(Connection conn, StudentVo vo) {
 		int result = 0;
 		String query = "insert into tb_student "

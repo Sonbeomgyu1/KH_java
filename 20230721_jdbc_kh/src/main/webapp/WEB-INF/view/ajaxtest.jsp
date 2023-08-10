@@ -27,6 +27,8 @@ function ajax1ClickHandler(result) {
 		}
 	});
 	console.log("ajax로 데이터 전달중-1");
+}
+function ajax2ClicHandler() {
 	
 }
 </script>
