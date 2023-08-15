@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.test.mybatis.student.service.StudentService;
+
 /**
  * Servlet implementation class MainContreller
  */
@@ -26,7 +28,8 @@ public class MainContreller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.getRequestDispatcher("/WEB-INF/view/main.jsp").forward(request, response);
+		request.setAttribute (getServletName(), response),new StudentService().selectList();
+		request.getRequestDispatcher("/WEB-INF/view/main.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
